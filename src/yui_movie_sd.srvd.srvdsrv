@@ -1,0 +1,5 @@
+@EndUserText.label: 'Serv Definition for Movie DB'
+define service YUI_MOVIE_SD {
+  expose YC_MOVIE as Movie;
+  expose YC_PERSON as Person;
+}

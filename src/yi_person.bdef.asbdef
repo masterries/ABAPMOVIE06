@@ -1,0 +1,48 @@
+managed;
+with draft;
+
+define behavior for YI_PERSON alias Person
+implementation in class ybp_i_person unique
+persistent table YDB_PERSON
+draft table YDB_D_PERSON
+lock master total etag Last_changed_at
+//authorization master (instance)
+etag master Last_changed_at
+
+{
+
+    update;
+    delete;
+    create;
+
+
+
+
+    field ( numbering : managed, readonly ) PersonId;
+    field ( readonly  ) Last_changed_at, Last_changed_by, Created_at, Created_by;
+    field ( mandatory ) Firstname, Lastname;
+
+    validation validateNames on save { field Firstname; create; }
+    validation validateLastnames on save { field  Lastname; create; }
+    validation validateDate  on save { field Birthday; create; }
+
+      draft determine action Prepare  {
+    validation validateNames;
+    validation validateLastnames;
+    validation validateDate;
+  }
+
+    mapping for YDB_PERSON
+  {
+    PersonId            = person_id;
+    Firstname           = firstname;
+    Lastname            = lastname;
+    Birthday            = birthday;
+    Nationality         = nationality;
+    Created_by          = created_by;
+    Created_at          = created_at;
+    Last_changed_by     = last_changed_by;
+    Last_changed_at     = last_changed_at;
+  }
+
+}
