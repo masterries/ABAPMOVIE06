@@ -89,6 +89,12 @@ annotate view YC_MOVIE
   @UI.fieldGroup: [{ qualifier: 'tqdetail', label: 'Duration' }]    
   Duration;
   
+   @UI: { lineItem:       [ { position: 90, label: 'Watched' },
+                            { type: #FOR_ACTION, dataAction: 'setWatched', label: 'Watched' },
+                            { type: #FOR_ACTION, dataAction: 'reset', label: 'Reset' }],
+         identification: [ { position: 90, label: 'Watched' },
+                            { type: #FOR_ACTION, dataAction: 'setWatched', label: 'Watched' },
+                            { type: #FOR_ACTION, dataAction: 'reset', label: 'Reset' } ] }
   @UI.fieldGroup: [{ qualifier: 'tqdetail', label: 'Watched' }]    
   Watched;
 

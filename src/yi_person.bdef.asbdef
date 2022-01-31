@@ -18,18 +18,17 @@ etag master Last_changed_at
 
 
 
+
     field ( numbering : managed, readonly ) PersonId;
     field ( readonly  ) Last_changed_at, Last_changed_by, Created_at, Created_by;
     field ( mandatory ) Firstname, Lastname;
 
     validation validateNames on save { field Firstname; create; }
     validation validateLastnames on save { field  Lastname; create; }
-    validation validateDate  on save { field Birthday; create; }
 
       draft determine action Prepare  {
     validation validateNames;
     validation validateLastnames;
-    validation validateDate;
   }
 
     mapping for YDB_PERSON

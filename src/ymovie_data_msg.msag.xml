@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>YMOVIE_DATA_MSG</ARBGB>
+    <MASTERLANG>E</MASTERLANG>
+    <STEXT>Message Class Movie</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>YMOVIE_DATA_MSG</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Firstname or lastname is empty</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>YMOVIE_DATA_MSG</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Date Field can not be in the Future</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>YMOVIE_DATA_MSG</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Person &amp;1 doesnt exits</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>YMOVIE_DATA_MSG</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Movie Name can not be Empty</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

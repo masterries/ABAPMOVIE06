@@ -6,13 +6,13 @@ implementation in class ybp_i_movie unique
 persistent table YDB_MOVIE
 draft table YDB_D_MOVIE
 lock master total etag Last_changed_at
-//authorization master (instance)
+
 etag master Last_changed_at
 {
   create;
   update;
   delete;
-  //association _Persondb { create; with draft; }
+
 
 
   field ( numbering : managed, readonly ) MovieId;
@@ -36,8 +36,6 @@ etag master Last_changed_at
   }
 
   determination CalculateMovieKey on modify { create; }
-//  validation validatePerson   on save { field PersonId; create; }action
-//  validation validateDuration on save { field Duration; create; }
 
   mapping for YDB_MOVIE
   {
