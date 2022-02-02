@@ -84,9 +84,10 @@ annotate view YC_MOVIE
   @UI.fieldGroup: [{ qualifier: 'tqdetail', label: 'Rated' }]
   Rated;
 
-  @UI: { lineItem:       [ { position: 80, label: 'Duration' } ],
-         identification: [ { position: 80, label: 'Duration' } ] }
-  @UI.fieldGroup: [{ qualifier: 'tqdetail', label: 'Duration' }]    
+@UI: { lineItem:       [ { position: 80, type: #AS_DATAPOINT, label: 'Duration in min' } ],
+        identification: [ { position: 80, label: 'Duration' } ] ,
+        dataPoint: { title: 'Duration', visualization: #PROGRESS, targetValue: 202 } }
+ // @UI.fieldGroup: [{ qualifier: 'tqdetail', label: 'Duration in min' }]
   Duration;
   
   @UI: { lineItem:       [ { position: 90, label: 'Watched' },
@@ -97,16 +98,6 @@ annotate view YC_MOVIE
                             { type: #FOR_ACTION, dataAction: 'reset', label: 'Reset' } ] }
   @UI.fieldGroup: [{ qualifier: 'tqdetail', label: 'Watched' }]    
   Watched;
-
-  @UI: { lineItem:       [ { position: 100, label: 'PersonId' } ],
-         identification: [ { position: 100, label: 'PersonId' } ] }
- @UI.fieldGroup: [{ qualifier: 'tqdirector', label: 'Director' }] 
-  PersonId;
-  
- @UI: { lineItem:       [ { position: 100, label: 'Avatar' } ],
-         identification: [ { position: 100, label: 'Avatar' } ] }
- @UI.fieldGroup: [{ qualifier: 'tqdetail', label: 'Avatar' }] 
-  Avatar;  
            
   @UI.hidden: true
   created_by;
