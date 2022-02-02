@@ -79,9 +79,9 @@ annotate view YC_MOVIE
   @UI.fieldGroup: [{ qualifier: 'tqdetail', label: 'Genre' }]
   Genre;
 
-  @UI: { lineItem:       [ { position: 70, label: 'Rated' } ],
+  @UI: { lineItem:       [ { position: 70, label: 'FSK' } ],
          identification: [ { position: 70, label: 'Rated' } ] }
-  @UI.fieldGroup: [{ qualifier: 'tqdetail', label: 'Rated' }]
+  @UI.fieldGroup: [{ qualifier: 'tqdetail', label: 'FSK' }]
   Rated;
 
 @UI: { lineItem:       [ { position: 80, type: #AS_DATAPOINT, label: 'Duration in min' } ],
