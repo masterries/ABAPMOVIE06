@@ -4,19 +4,14 @@ CLASS lhc_Movie DEFINITION INHERITING FROM cl_abap_behavior_handler.
     METHODS get_instance_features FOR INSTANCE FEATURES
       IMPORTING keys REQUEST requested_features FOR Movie RESULT result.
 
-    METHODS CalculateMovieKey FOR DETERMINATION Movie~CalculateMovieKey
+    METHODS calculateMovieKey FOR DETERMINATION Movie~calculateMovieKey
       IMPORTING keys FOR Movie.
 
-    METHODS rateMovie FOR MODIFY
-      IMPORTING keys FOR ACTION Movie~rateMovie RESULT result.
     METHODS reset FOR MODIFY
       IMPORTING keys FOR ACTION Movie~reset RESULT result.
 
     METHODS setWatched FOR MODIFY
       IMPORTING keys FOR ACTION Movie~setWatched RESULT result.
-
-    METHODS validateDates FOR VALIDATE ON SAVE
-      IMPORTING keys FOR Movie~validateDates.
 
     METHODS validateMandatoryFields FOR VALIDATE ON SAVE
       IMPORTING keys FOR Movie~validateMandatoryFields.
@@ -32,7 +27,7 @@ CLASS lhc_Movie IMPLEMENTATION.
   METHOD get_instance_features.
   ENDMETHOD.
 
-  METHOD CalculateMovieKey.
+  METHOD calculateMovieKey.
   SELECT FROM yi_movie
         FIELDS MAX( movieid ) INTO @DATA(lv_max_movieid).
 
@@ -46,20 +41,14 @@ CLASS lhc_Movie IMPLEMENTATION.
     ENDLOOP.
   ENDMETHOD.
 
-*  *******************************************************************************
-*
-*   Implements rateMovie action (in our case: for rating movie [0-5]
-*
-*  *******************************************************************************
-  METHOD rateMovie.
-  ENDMETHOD.
 
 
-*  *******************************************************************************
-*
-*   Implements reset action (in our case: for setting movie to unwatched)
-*
-*  *******************************************************************************
+
+**********************************************************************
+*Implements reset action
+**********************************************************************
+
+
   METHOD reset.
     MODIFY ENTITIES OF yi_movie IN LOCAL MODE
            ENTITY Movie
@@ -69,7 +58,6 @@ CLASS lhc_Movie IMPLEMENTATION.
            FAILED   failed
            REPORTED reported.
 
-    " Read changed data for action result
     READ ENTITIES OF yi_movie IN LOCAL MODE
          ENTITY Movie
          FROM VALUE #( FOR key IN keys (  movieid = key-movieid
@@ -94,12 +82,10 @@ CLASS lhc_Movie IMPLEMENTATION.
                                                %param  = movie ) ).
   ENDMETHOD.
 
+**********************************************************************
+*  Implements Watched action (in our case: for setting movie to watched)
+**********************************************************************
 
-*  *******************************************************************************
-*
-*   Implements Watched action (in our case: for setting movie to watched)
-*
-*  *******************************************************************************
   METHOD setWatched.
   MODIFY ENTITIES OF yi_movie IN LOCAL MODE
            ENTITY Movie
@@ -109,7 +95,6 @@ CLASS lhc_Movie IMPLEMENTATION.
            FAILED   failed
            REPORTED reported.
 
-    " Read changed data for action result
     READ ENTITIES OF yi_movie IN LOCAL MODE
          ENTITY Movie
          FROM VALUE #( FOR key IN keys (  movieid = key-movieid
@@ -139,7 +124,7 @@ CLASS lhc_Movie IMPLEMENTATION.
 *
 *  *******************************************************************************
     METHOD validatePerson.
-         " Read relevant travel instance data
+
     READ ENTITIES OF yi_movie IN LOCAL MODE
       ENTITY Movie
         FIELDS ( PersonID ) WITH CORRESPONDING #( keys )
@@ -147,7 +132,6 @@ CLASS lhc_Movie IMPLEMENTATION.
 
     DATA persons TYPE SORTED TABLE OF zdb_person WITH UNIQUE KEY person_id.
 
-    " Optimization of DB select: extract distinct non-initial customer IDs
     persons = CORRESPONDING #( movies DISCARDING DUPLICATES MAPPING person_id = PersonID EXCEPT * ).
     DELETE persons WHERE person_id IS INITIAL.
     IF persons IS NOT INITIAL.
@@ -165,35 +149,8 @@ CLASS lhc_Movie IMPLEMENTATION.
 
         APPEND VALUE #( %key = movie-%key
                      %msg  = new_message(
-                    id   = 'ZMOVIE_MSG_SR'
-                    number = '001'
-                    severity = if_abap_behv_message=>severity-error )
-                    ) TO reported-movie.
-      ENDIF.
-    ENDLOOP.
-  ENDMETHOD.
-
-
-*  *******************************************************************************
-*
-*   Validate Dates --> Date cannot be in the future.
-*
-*  *******************************************************************************
-  METHOD validateDates.
-  READ ENTITIES OF yi_movie IN LOCAL MODE
-
-            ENTITY Movie
-        FIELDS ( releaseyear ) WITH CORRESPONDING #( keys )
-        RESULT DATA(lt_movie).
-
-   "Check if mandatory fields are not empty + write error message
-    LOOP AT lt_movie INTO DATA(ls_movie).
-      IF ls_movie-releaseyear > cl_abap_context_info=>get_system_date( ).
-        APPEND VALUE #(  %key = ls_movie-%key ) TO failed-movie.
-        APPEND VALUE #( %key = ls_movie-%key
-                  %msg  = new_message(
-                    id   = 'ZMOVIE_MSG_SR'
-                    number = '002'
+                    id   = 'YMOVIE_DATA_MSG'
+                    number = '003'
                     severity = if_abap_behv_message=>severity-error )
                     ) TO reported-movie.
       ENDIF.
@@ -220,8 +177,8 @@ CLASS lhc_Movie IMPLEMENTATION.
         APPEND VALUE #(  %key = ls_movie-%key ) TO failed-movie.
         APPEND VALUE #( %key = ls_movie-%key
                   %msg  = new_message(
-                    id   = 'ZMOVIE_MSG_SR'
-                    number = '005'
+                    id   = 'YMOVIE_DATA_MSG'
+                    number = '004'
                     severity = if_abap_behv_message=>severity-error )
                     ) TO reported-movie.
       ENDIF.
@@ -229,8 +186,8 @@ CLASS lhc_Movie IMPLEMENTATION.
         APPEND VALUE #(  %key = ls_movie-%key ) TO failed-movie.
         APPEND VALUE #( %key = ls_movie-%key
                   %msg  = new_message(
-                    id   = 'ZMOVIE_MSG_SR'
-                    number = '001'
+                    id   = 'YMOVIE_DATA_MSG'
+                    number = '003'
                     severity = if_abap_behv_message=>severity-error )
                     ) TO reported-movie.
       ENDIF.

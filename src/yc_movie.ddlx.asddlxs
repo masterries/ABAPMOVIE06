@@ -69,8 +69,8 @@ annotate view YC_MOVIE
   
  @UI: { lineItem:       [ { position: 50, type: #AS_DATAPOINT, label: 'Rating' } ],
          identification: [ { position: 50, label: 'Rating' } ],
-         dataPoint: { title: 'Rating', visualization: #RATING, targetValue: 10 } }
-//@UI.fieldGroup: [{ qualifier: 'tqrating', label: 'Header' }] 
+         dataPoint: { title: 'Rating', visualization: #RATING, targetValue: 5 } }
+
   Rating;
 
   
@@ -89,7 +89,7 @@ annotate view YC_MOVIE
   @UI.fieldGroup: [{ qualifier: 'tqdetail', label: 'Duration' }]    
   Duration;
   
-   @UI: { lineItem:       [ { position: 90, label: 'Watched' },
+  @UI: { lineItem:       [ { position: 90, label: 'Watched' },
                             { type: #FOR_ACTION, dataAction: 'setWatched', label: 'Watched' },
                             { type: #FOR_ACTION, dataAction: 'reset', label: 'Reset' }],
          identification: [ { position: 90, label: 'Watched' },
@@ -106,16 +106,7 @@ annotate view YC_MOVIE
  @UI: { lineItem:       [ { position: 100, label: 'Avatar' } ],
          identification: [ { position: 100, label: 'Avatar' } ] }
  @UI.fieldGroup: [{ qualifier: 'tqdetail', label: 'Avatar' }] 
-  Avatar;
-  
-//@UI: { lineItem:       [ { position: 110, type: #AS_DATAPOINT, label: 'Custom Rating' } ],
-//         identification: [ { position: 110, label: 'Custom Rating' } ],
-//         dataPoint: { title: 'Custom Rating', visualization: #RATING, targetValue: 5 } }
-//@UI.fieldGroup: [{ qualifier: 'tqcustomrating', label: 'Header' }] 
-//  CustomRate;
-  
-  
-  
+  Avatar;  
            
   @UI.hidden: true
   created_by;

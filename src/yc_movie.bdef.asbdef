@@ -10,7 +10,6 @@ define behavior for YC_MOVIE alias Movie
 
 
 
-   use action rateMovie;
    use action setWatched;
    use action reset;
  }
