@@ -92,12 +92,23 @@ annotate view YC_MOVIE
   
   @UI: { lineItem:       [ { position: 90, label: 'Watched' },
                             { type: #FOR_ACTION, dataAction: 'setWatched', label: 'Watched' },
-                            { type: #FOR_ACTION, dataAction: 'reset', label: 'Reset' }],
+                            { type: #FOR_ACTION, dataAction: 'reset', label: 'UnWatched' }],
          identification: [ { position: 90, label: 'Watched' },
                             { type: #FOR_ACTION, dataAction: 'setWatched', label: 'Watched' },
-                            { type: #FOR_ACTION, dataAction: 'reset', label: 'Reset' } ] }
+                            { type: #FOR_ACTION, dataAction: 'reset', label: 'UnWachted' } ] }
   @UI.fieldGroup: [{ qualifier: 'tqdetail', label: 'Watched' }]    
   Watched;
+  
+    @UI: { lineItem:       [ { position: 100, label: 'PersonId' } ],
+         identification: [ { position: 100, label: 'PersonId' } ] }
+ @UI.fieldGroup: [{ qualifier: 'tqdirector', label: 'Director' }] 
+  PersonId;
+  
+   @UI: { lineItem:       [ { position: 100, label: 'Avatar' } ],
+         identification: [ { position: 100, label: 'Avatar' } ] }
+ @UI.fieldGroup: [{ qualifier: 'tqdetail', label: 'Avatar' }] 
+  Avatar;
+  
            
   @UI.hidden: true
   created_by;

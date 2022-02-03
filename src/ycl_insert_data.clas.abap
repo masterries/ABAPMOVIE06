@@ -18,7 +18,7 @@ CLASS YCL_INSERT_DATA IMPLEMENTATION.
     DATA: dbmovie TYPE TABLE OF ydb_movie.
 
     dbmovie = VALUE #(
-     ( movie_id = '100'
+( movie_id = '100'
             person_id ='9986'
             rating = '4'
             movie_name ='Dune'
@@ -27,78 +27,78 @@ CLASS YCL_INSERT_DATA IMPLEMENTATION.
             rated = '12'
             duration = 155
             avatar = 'https://www.ixpap.com/images/2021/10/Dune-2021-Wallpaper-4.jpg' )
-    ( movie_id = '101'
-            person_id ='3907059523556088'
+( movie_id = '101'
+            person_id ='9978'
             rating = '4.3'
-            movie_name ='Die Verurteilten'
-            release_year = 1994
-            genre ='Drama'
+            movie_name ='Knives Out – Mord ist Familiensache'
+            release_year = 2019
+            genre ='Mystery, Krimi'
             rated = '12'
-            duration = 142
-            avatar = 'https://m.media-amazon.com/images/I/517SDGYY26L.jpg' )
-    ( movie_id = '102'
-            person_id ='6687126073939348'
+            duration = 130
+            avatar = 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTKC5LJf7oVo4IvyzbzaBgpYrCqsHsOHF5-qRQVNt8fdQvhOHe3' )
+( movie_id = '102'
+            person_id ='9979'
             rating = '4.2'
             movie_name ='Der Pate'
             release_year = 1972
-            genre ='Crime,Drama'
+            genre ='Crime, Drama'
             rated = '16'
             duration = 175
             avatar = 'https://eplay-prod.s3.eu-west-1.amazonaws.com/store/movie_region_poster/32823/file/movie_detail_image/8d1a3b640b5a2d3e060bddcc263454dd.jpg' )
-    ( movie_id = '103'
+( movie_id = '103'
             person_id ='9999'
             rating = '4'
             movie_name ='The Dark Knight'
             release_year = 2008
-            genre ='Action,Drama'
+            genre ='Action, Drama'
             rated = '16'
             duration = 152
             avatar = 'https://m.media-amazon.com/images/I/91KkWf50SoL._SY445_.jpg')
 ( movie_id = '104'
-            person_id ='5165482513286000'
-            rating = '3'
-            movie_name ='Die zwölf Geschworenen'
-            release_year = 1957
-            genre ='Crime'
-            rated = '12'
-            duration = 96
-            avatar = 'https://cdn.cineplex.de/_imageserver/340f12051.jpg')
+            person_id ='9985'
+            rating = '4.5'
+            movie_name ='Die Eiskönigin'
+            release_year = 2013
+            genre ='Kinderfilm, Musical'
+            rated = '0'
+            duration = 108
+            avatar = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdUwyNLVP9kk93LmrALrtUMY_1AndXwszCvg&usqp=CAU')
 ( movie_id = '105'
-            person_id ='6687126073939348'
+            person_id ='9992'
             rating = '3.5'
-            movie_name ='Der Pate 2'
-            release_year = 1974
-            genre ='Crime, Drama'
+            movie_name ='Spiel mir das Lied vom Tod'
+            release_year = 1968
+            genre ='Western, Action'
             rated = '16'
-            duration =  202
-            avatar = 'https://m.media-amazon.com/images/I/51IJnDIXclL._SY445_.jpg')
+            duration =  165
+            avatar = 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRzf7vyu2toxw9f1b9waj5mONWKLZuEu70xw3xKtUvRQA4Hxuuq')
 ( movie_id = '106'
             person_id ='9997'
             rating = '4.8'
-            movie_name ='Der Herr der Ringe:Die Rückkehr des Königs'
+            movie_name ='Der Herr der Ringe: Die Rückkehr des Königs'
             release_year = 2003
             genre ='Action, Drama'
             rated = '12'
             duration = 201
             avatar = 'https://m.media-amazon.com/images/I/519bOjTzUWL.jpg' )
 ( movie_id = '107'
-            person_id ='9996'
-            rating = '3.9'
-            movie_name ='Pulp Fiction'
-            release_year = 1994
-            genre ='Crime,Drama'
+            person_id ='9977'
+            rating = '1.2'
+            movie_name ='Joker'
+            release_year = 2019
+            genre ='Crime, Drama'
             rated = '16'
-            duration = 154
-            avatar = 'https://m.media-amazon.com/images/I/81-NJGwcsGL._SL1400_.jpg' )
+            duration = 122
+            avatar = 'https://de.web.img3.acsta.net/pictures/19/09/03/07/53/4626766.jpg' )
 ( movie_id = '108'
-            person_id ='2906167594148450'
+            person_id ='9980'
             rating = '3.9'
-            movie_name ='Schindlers Liste'
-            release_year = 1993
+            movie_name ='12 Years a Slave'
+            release_year = 2013
             genre ='Drama, History'
             rated = '12'
-            duration = 195
-            avatar = 'https://de.web.img3.acsta.net/pictures/18/11/19/14/27/1841128.jpg')
+            duration = 134
+            avatar = 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQChA5af9OTTL6Il9237dUZpzGGMxXBukTQU6_vvy31OGOd7Mlt')
 ( movie_id = '109'
             person_id ='9999'
             rating = '3.8'
@@ -136,14 +136,14 @@ CLASS YCL_INSERT_DATA IMPLEMENTATION.
         duration = 142
          avatar = 'https://m.media-amazon.com/images/I/61eAL7QPTRL._SY445_.jpg')
 ( movie_id = '113'
-        person_id ='9992'
-        rating = '2.5'
-        movie_name ='Zwei glorreiche Halunken'
-        release_year = 1966
-        genre ='Western'
-        rated = '18'
-        duration = 161
-        avatar = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdWILwAOngHBp7xH_uqGOaYyTm_v3TRekyog&usqp=CAU' )
+        person_id ='9984'
+        rating = '3.5'
+        movie_name ='Doctor Strange'
+        release_year = 2016
+        genre ='Action, Abenteuer'
+        rated = '12'
+        duration = 115
+        avatar = 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSKS0s-IiPnSKY5TwqL-CoUJfKRk5VYt6QBD4O66-1Wct_aPjhM' )
 ( movie_id = '120'
         person_id ='9997'
         rating = '1.7'
@@ -164,41 +164,41 @@ CLASS YCL_INSERT_DATA IMPLEMENTATION.
         avatar = 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTlTGZRRPuXJD39jIfcwdwcxUwowa_c942v2yac9VT1grVnMK2S' )
 
 ( movie_id = '115'
-        person_id ='9990'
+        person_id ='9983'
         rating = '4.7'
-        movie_name ='GoodFellas - Drei Jahrzehnte in der Mafia'
+        movie_name ='Titanic'
         release_year = 1990
-        genre ='Biography, Crime, Drama '
-        rated = '16'
-        duration = 146
-        avatar = 'https://de.web.img3.acsta.net/c_310_420/medias/nmedia/18/76/04/79/19278066.jpg')
+        genre ='Romanze, Drama '
+        rated = '12'
+        duration = 194
+        avatar = 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSUBnDOjqMDB0Fpun7jd1TOT8RUXBV3L9HTY6TDOFV3EJJroOtj')
 ( movie_id = '116'
         person_id ='9989'
         rating = '3.7'
-        movie_name ='Das Imperium schlägt zurück'
+        movie_name ='Star Wars: Das Imperium schlägt zurück'
         release_year = 1980
-        genre ='Action, Adventure, Fantasy '
+        genre ='Action, Adventure, Fantasy  '
         rated = '12'
         duration = 124
         avatar = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQZ0DQ9uI3mk_gv96N-sue4i_XC8YH4WzGXw&usqp=CAU')
 ( movie_id = '117'
-        person_id ='9988'
+        person_id ='9982'
         rating = '2.7'
-        movie_name ='Einer flog über das Kuckucksnest'
-        release_year = 1975
-        genre ='Drama'
-        rated = '16'
-        duration = 133
-        avatar = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRHzhA1TQnFHEgXk1Gi4fo50u5FN5JBjcFWg&usqp=CAU' )
+        movie_name ='Hatari!'
+        release_year = 1962
+        genre ='Romaze, Abenteuer'
+        rated = '12'
+        duration = 157
+        avatar = 'https://m.media-amazon.com/images/I/71yVjuGQ2qL._SL1076_.jpg' )
 ( movie_id = '118'
-        person_id ='9987'
+        person_id ='9981'
         rating = '3.7'
-        movie_name ='Parasite'
-        release_year = 2019
-        genre ='Comedy, Drama, Thriller'
+        movie_name ='Split'
+        release_year = 2016
+        genre ='Horror, Thriller'
         rated = '16'
-        duration = 132
-        avatar = 'https://images-na.ssl-images-amazon.com/images/I/91WkkO0UbAL._RI_.jpg'  )
+        duration = 117
+        avatar = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeSokWdC29Pw3EYrZM6EaJM-Pw6u9bgM-a_b08tXfD0nA2nw9w'  )
         ).
 
 DELETE FROM ydb_movie.
@@ -293,6 +293,59 @@ DATA: dbperson TYPE TABLE OF ydb_person.
         birthday = '3.10.1967'
         nationality = 'Kanada' )
 
+     ( person_id ='9985'
+        firstname = 'Chris'
+        lastname = 'Buck'
+        birthday = '24.02.1958'
+        nationality = 'USA' )
+
+     ( person_id ='9984'
+        firstname = 'Scott'
+        lastname = 'Derrickson'
+        birthday = '16.07.1966'
+        nationality = 'USA' )
+
+     ( person_id ='9983'
+        firstname = 'James'
+        lastname = 'Cameron'
+        birthday = '16.08.1954'
+        nationality = 'Kanada' )
+
+     ( person_id ='9982'
+        firstname = 'Howard'
+        lastname = 'Hawks'
+        birthday = '30.05.1896'
+        nationality = 'USA' )
+
+     ( person_id ='9981'
+        firstname = 'M. Night'
+        lastname = 'Shyamalan'
+        birthday = '6.08.1970'
+        nationality = 'Indien' )
+
+     ( person_id ='9980'
+        firstname = 'Steve'
+        lastname = 'McQueen'
+        birthday = '9.10.1969'
+        nationality = 'England' )
+
+     ( person_id ='9979'
+        firstname = 'Francis Ford'
+        lastname = 'Coppola'
+        birthday = '7.04.1939'
+        nationality = 'USA' )
+
+     ( person_id ='9978'
+        firstname = 'Rian'
+        lastname = 'Johnson'
+        birthday = '17.12.1973'
+        nationality = 'USA' )
+
+     ( person_id ='9977'
+        firstname = 'Todd'
+        lastname = 'Phillips'
+        birthday = '20.12.1970'
+        nationality = 'USA' )
         ).
 DELETE FROM ydb_person.
 INSERT ydb_person FROM TABLE @dbperson.

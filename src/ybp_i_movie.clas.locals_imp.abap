@@ -130,13 +130,13 @@ CLASS lhc_Movie IMPLEMENTATION.
         FIELDS ( PersonID ) WITH CORRESPONDING #( keys )
       RESULT DATA(movies).
 
-    DATA persons TYPE SORTED TABLE OF zdb_person WITH UNIQUE KEY person_id.
+    DATA persons TYPE SORTED TABLE OF ydb_person WITH UNIQUE KEY person_id.
 
     persons = CORRESPONDING #( movies DISCARDING DUPLICATES MAPPING person_id = PersonID EXCEPT * ).
     DELETE persons WHERE person_id IS INITIAL.
     IF persons IS NOT INITIAL.
       " Check if customer ID exist
-      SELECT FROM zdb_person FIELDS person_id
+      SELECT FROM ydb_person FIELDS person_id
         FOR ALL ENTRIES IN @persons
         WHERE person_id = @persons-person_id
         INTO TABLE @DATA(persons_db).
